@@ -42,7 +42,6 @@ async def main_2():
             tasks_list.append(task)
 
         result = await asyncio.gather(*tasks_list)
-        print(result[16][1]['detail'])
         pool = await asyncpg.create_pool(config.PG_DSN, min_size=20, max_size=20)
         tasks_list1 = []
         for i in result:
